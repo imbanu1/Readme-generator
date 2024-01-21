@@ -7,17 +7,24 @@ const generatePage = require('./utils/generateMarkdown.js');
 const questions = [];
 
 inquirer.prompt([
-    'What is the title of your project ?'
+  {
+    type:'input',
+    name:'title',
+    message: 'What is the title of your project ?',
+},
+{
+  type:'input',
+    name:'Description',
+    message: 'Please describe your project ?',
+},
+{
+  type:'input',
+  name:'Description',
+  message: 'Please describe your project ?', 
+},
+
   ])
-  .then((answers) => {
-    // Use user feedback for... whatever!!
-  })
-  .catch((error) => {
-    if (error.isTtyError) {
-      // Prompt couldn't be rendered in the current environment
-    } else {
-      // Something else went wrong
-    }
+
   });
 
 
