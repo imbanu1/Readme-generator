@@ -15,12 +15,33 @@ inquirer.prompt([
 {
   type:'input',
     name:'Description',
-    message: 'Please describe your project ?',
+    message: 'Please describe your project:',
 },
 {
   type:'input',
-  name:'Description',
-  message: 'Please describe your project ?', 
+  name:'installation',
+  message: 'Please enter installation instructions:', 
+},
+{
+  type:'input',
+  name:'usage',
+  message: 'Please enter usage info:', 
+},
+{
+  type:'input',
+  name:'contributing',
+  message: 'Please enter contribution guidelines:', 
+},
+{
+  type:'input',
+  name:'test',
+  message: 'Please enter test instructions:', 
+},
+{
+  type:'list',
+  name:'license',
+  message: 'Please choose a license:', 
+  choices: ["GNU AGPLv3", "Apache License 2.0", "GNU GPLv3", "MIT License", "GNU LGPLv3"]
 },
 
   ])
