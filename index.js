@@ -2,9 +2,9 @@
 const fs = require ('fs');
 const inquirer = require('inquirer');
 
-const generatePage = require('./utils/generateMarkdown.js');
-// TODO: Create an array of questions for user input
-const questions = [];
+const generateMarkdown = require('./utils/generateMarkdown.js');
+const { error } = require('console');
+
 
 inquirer.prompt([
   {
@@ -41,19 +41,24 @@ inquirer.prompt([
   type:'list',
   name:'license',
   message: 'Please choose a license:', 
-  choices: ["GNU AGPLv3", "Apache License 2.0", "GNU GPLv3", "MIT License", "GNU LGPLv3"]
+  choices: ["GNU AGPLv3", "Apache License 2.0", "GNU GPLv3", "MIT License", "GNU LGPLv3", "None"]
+},
+{
+  type:'input',
+  name:'githubUsername',
+  message: 'Please enter your github username:', 
+},
+{
+  type:'input',
+  name:'email',
+  message: 'Please enter your email address:', 
 },
 
+
   ])
-
-  });
-
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
+  .then((answers) => {
+fs.writeFile("dist/README.md",generateMarkdown(answers),error=>{
+  if (error){console.log(error.message)}
+  else console.log("Your file was successfully created")
+})
+  })
