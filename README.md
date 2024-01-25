@@ -1,5 +1,6 @@
 GIVEN a command-line application that accepts user input
-(https://github.com/imbanu1/Readme-generator/blob/main/images/readme-title.png?raw=true)
+![image](https://github.com/imbanu1/Readme-generator/assets/60904607/10055a9e-2355-4283-9269-00491f9fc4f0)
+
 
 WHEN I am prompted for information about my application repository
 THEN a high-quality, professional README.md is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
